@@ -21,15 +21,16 @@ if __name__ == "__main__":
 
     setup(
         name="treq",
+        version='18.6.0.chevah1',
         packages=find_packages('src'),
         package_dir={"": "src"},
         setup_requires=["incremental"],
-        use_incremental=True,
         install_requires=[
             "incremental",
             "requests >= 2.1.0",
             "six",
-            "Twisted[tls] >= 16.4.0",
+            # Twisted[tls] >= 16.4.0 is required only due to Python3 support.
+            "Twisted",
             "attrs",
         ],
         extras_require={
